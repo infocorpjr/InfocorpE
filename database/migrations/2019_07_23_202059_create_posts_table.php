@@ -13,8 +13,12 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string("tittle");
+            $table->string("sub_tittle")->nullable();
+            $table->dateTime("date");
+            $table->string("image_url")->nullable();
             $table->timestamps();
         });
     }
